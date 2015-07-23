@@ -1,4 +1,5 @@
 buck-out/
+.buckd/
 icu
 !icu/BUCK
 jsc
