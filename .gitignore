@@ -1,0 +1,8 @@
+buck-out/
+icu
+!icu/BUCK
+jsc
+!jsc/BUCK
+!jsc/extra_headers
+*.gz
+*.bz2
