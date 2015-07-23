@@ -11,21 +11,21 @@ This repository contains makefile and scripts for building JavaScriptCore librar
 
 ## Build instructions
 
-1. Use the following script to pull in sources for [JavaScriptCore](https://www.webkit.org) and [ICU](http://site.icu-project.org)
+**1. Use the following script to pull in sources for [JavaScriptCore](https://www.webkit.org) and [ICU](http://site.icu-project.org)**
 ```bash
 ./fetch_sources.sh
 ```
 
-2. To build and install android AAR in you local maven repository use:
+**2. To build and install android AAR in you local maven repository use:**
 ```bash
 ./build_and_install.sh
 ```
 
 ## Use android-jsc AAR
 
-After installation, android-jsc AAR file should be accessible through maven.
+After installation, android-jsc AAR file should be accessible through maven:
 
-1. Using BUCK
+**1. Using BUCK**
 ```python
 remote_file(
   name = 'android-jsc',
@@ -34,7 +34,7 @@ remote_file(
 )
 ```
 
-2. Using gradle
+**2. Using gradle**
 ```groovy
 compile 'org.webkit:android-jsc:r174650'
 ```
