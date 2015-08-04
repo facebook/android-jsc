@@ -1,4 +1,4 @@
-# JavaScriptCore makefiles for Android
+# JavaScriptCore build scripts for Android
 
 This repository contains makefile and scripts for building JavaScriptCore library for Android. Build scripts bundles JavaScriptCore as a shared library into [android AAR](http://tools.android.com/tech-docs/new-build-system/aar-format) archive, which makes it easy to use it in Android projects build with [Buck](https://buckbuild.com) or [Gradle](https://gradle.org).
 
