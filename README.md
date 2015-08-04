@@ -20,6 +20,7 @@ This repository contains makefile and scripts for building JavaScriptCore librar
 ```bash
 buck build :android-jsc
 ```
+As build step may take a while, consider using `--num-threads` or `--load-limit` options of `buck` command. This may slow the build process down, but should let you use your computer with less hiccups while the build command is running.
 
 **3. Install android AAR in you local maven repository use:**
 ```bash
