@@ -16,9 +16,14 @@ This repository contains makefile and scripts for building JavaScriptCore librar
 ./fetch_sources.sh
 ```
 
-**2. To build and install android AAR in you local maven repository use:**
+**2. Build AAR with buck (this may take a while)**
 ```bash
-./build_and_install.sh
+buck build :android-jsc
+```
+
+**3. Install android AAR in you local maven repository use:**
+```bash
+./install.sh
 ```
 
 ## Use android-jsc AAR
