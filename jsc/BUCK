@@ -2,7 +2,7 @@
 
 import os
 
-SUPPORTED_PLATFORMS = '^android-(armv7|x86)$'
+SUPPORTED_PLATFORMS = '^android-(armv7|x86|x86_64)$'
 
 def unpack_rule(source, from_rule):
   genrule(
@@ -25,19 +25,6 @@ WTF_EXPORTED_PREPROCESSOR_FLAGS = [
   '-D__GXX_EXPERIMENTAL_CXX0X__',
   '-DENABLE_GLOBAL_FASTMALLOC_NEW=0',
 ]
-
-# Dirty hack, StdLibExtras.h assumes incorrectly that is_trivially_destructible
-# have been added in 4.8.1 version while it was added in 4.8.0. We emulate PATCH
-# version to be 1 so that StdLibExtra.h doesn't try to declare
-# is_trivially_destructible
-# Except from this single place JSC code doesn't check for 4.8.1 anywhere else
-WTF_EXPORTED_PREPROCESSOR_FLAGS.extend([
-  '-U__GNUC_PATCHLEVEL__',
-  '-D__GNUC_PATCHLEVEL__=1',
-  '-DPTHREAD_KEYS_MAX=1024',
-  '-DINTPTR_MAX=LONG_MAX',
-  '-Dlog2(x)=(log(x)/log(2.0))',
-])
 
 cxx_library(
   name = 'wtfassertions',
@@ -165,6 +152,7 @@ cxx_library(
   supported_platforms_regex = SUPPORTED_PLATFORMS,
   header_namespace = '',
   headers = subdir_glob([
+    ('WTF', '*.h'),
     ('WTF/wtf', '*.h'),
     ('', 'extra_headers/*.h'),
   ]),
@@ -936,7 +924,7 @@ SOURCES = glob([
   'JavaScriptCore/*.asm',
 ])
 SOURCES.append(':InitBytecodes.asm')
-for platform in ('android-armv7', 'android-x86'):
+for platform in ('android-armv7', 'android-x86', 'android-x86_64'):
   source = 'LLIntAssembly.{0}.h'.format(platform)
   genrule(
     name = source,
