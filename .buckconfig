@@ -1,7 +1,10 @@
 [buildfile]
     includes = //BUILD_DEFS
 [ndk]
-    ndk_version = r10c
+    ndk_version = r10e
+    cpu_abis = armv7, x86, x86_64
+    gcc_version = 4.9
+    app_platform = android-21
     cppflags = \
         -std=gnu11 \
         -Wall \
@@ -88,6 +91,18 @@
         -mfloat-abi=softfp \
         -mthumb \
         -Os
+    x86_64_cppflags = \
+        -O2
+    x86_64_cflags = \
+        -funswitch-loops \
+        -finline-limit=300 \
+        -O2
+    x86_64_cxxppflags = \
+        -O2
+    x86_64_cxxflags = \
+        -funswitch-loops \
+        -finline-limit=300 \
+        -O2
     x86_cppflags = \
         -O2
     x86_cflags = \
