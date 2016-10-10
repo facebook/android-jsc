@@ -2,7 +2,7 @@
 
 import os
 
-SUPPORTED_PLATFORMS = '^android-(armv7|x86|x86_64)$'
+SUPPORTED_PLATFORMS = '^android-(armv7|arm64|x86|x86_64)$'
 
 def unpack_rule(source, from_rule):
   genrule(
@@ -924,7 +924,7 @@ SOURCES = glob([
   'JavaScriptCore/*.asm',
 ])
 SOURCES.append(':InitBytecodes.asm')
-for platform in ('android-armv7', 'android-x86', 'android-x86_64'):
+for platform in ('android-armv7', 'android-arm64', 'android-x86', 'android-x86_64'):
   source = 'LLIntAssembly.{0}.h'.format(platform)
   genrule(
     name = source,
