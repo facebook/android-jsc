@@ -1,0 +1,13 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/android-jsc
+    docker:
+      - image: gengjiawen/android-jsc
+    steps:
+      - build
+      - run:
+          name: Setup NDK
+          command: |
+            ./fetch_sources.sh
+            buck build :android-jsc
