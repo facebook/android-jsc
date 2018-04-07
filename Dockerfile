@@ -1,6 +1,6 @@
 FROM gengjiawen/android-ndk
 
-RUN apt-get install subversion gperf git ant python2 -y \
+RUN apt-get install subversion gperf git ant python-dev -y \
 
 #install buck
 RUN git clone https://github.com/facebook/buck.git && \
