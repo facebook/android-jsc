@@ -1,3 +1,6 @@
+.idea
+*.iml
+gen
 buck-out/
 .buckd/
 icu
