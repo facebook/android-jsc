@@ -7,7 +7,7 @@ jobs:
     steps:
       - build
       - run:
-          name: Setup NDK
+          name: build aar
           command: |
             ./fetch_sources.sh
             buck build :android-jsc
