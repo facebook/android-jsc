@@ -17,7 +17,7 @@ RUN mkdir /opt/android-ndk-tmp && \
 
 ENV PATH ${ANDROID_NDK_HOME}:$PATH
 
-RUN apt-get install git ant python-dev subversion -y
+RUN apt-get install git ant python-dev ruby zip subversion -y
 
 #install buck and checkout jsc
 RUN wget "https://github.com/facebook/buck/releases/download/v2018.03.26.01/buck_2018.03.26_all.deb" && \
