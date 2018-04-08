@@ -13,6 +13,6 @@ echo "Extracting ICU"
 tar -zxf icu4c.tar.gz -C icu
 
 echo "set JSC"
-cp -r ~/webkit/Source/JavaScriptCore jsc
-cp -r ~/webkit/Source/WTF jsc
+cp -r /webkit/Source/JavaScriptCore jsc
+cp -r /webkit/Source/WTF jsc
 
