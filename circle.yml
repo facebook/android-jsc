@@ -5,7 +5,6 @@ jobs:
     docker:
       - image: gengjiawen/android-jsc
     steps:
-      - build
       - run:
           name: build aar
           command: |
