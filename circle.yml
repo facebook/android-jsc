@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/android-jsc
     docker:
-      - image: gengjiawen/android-jsc
+      - image: gengjiawen/android-jsc:feature_abi_support
     steps:
       - run:
           name: build aar
