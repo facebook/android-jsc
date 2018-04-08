@@ -2,6 +2,8 @@ FROM gengjiawen/android-ndk
 
 # use old ndk
 ENV ANDROID_NDK_HOME /opt/android-ndk
+ENV ANDROID_NDK /opt/android-ndk
+ENV NDK_HOME /opt/android-ndk
 ENV ANDROID_NDK_VERSION r10e
 RUN rm -rf ${ANDROID_HOME}/ndk-bundle
 
