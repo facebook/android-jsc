@@ -5,6 +5,7 @@ jobs:
     docker:
       - image: gengjiawen/android-jsc:feature_abi_support
     steps:
+      - checkout
       - run:
           name: build aar
           command: |
