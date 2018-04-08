@@ -4,6 +4,8 @@ jobs:
     working_directory: ~/android-jsc
     docker:
       - image: gengjiawen/android-jsc:feature_abi_support
+    environment:
+      - ANDROID_NDK: '/opt/android-ndk'
     steps:
       - checkout
       - run:
