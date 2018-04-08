@@ -6,6 +6,7 @@ jobs:
       - image: gengjiawen/android-jsc:feature_abi_support
     environment:
       - ANDROID_NDK: '/opt/android-ndk'
+      - _JAVA_OPTIONS: "-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap"
     steps:
       - checkout
       - run:
