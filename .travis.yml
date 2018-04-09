@@ -1,0 +1,14 @@
+dist: trusty
+sudo: required
+env:
+  global:
+  - _JAVA_OPTIONS: "-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap"
+
+language: c
+
+services:
+  - docker
+
+script:
+- docker run --name hei gengjiawen/android-jsc:feature_abi_support /bin/sh -c "./fetch_sources.sh && buck build :android-jsc"
+
