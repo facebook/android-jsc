@@ -10,5 +10,5 @@ services:
   - docker
 
 script:
-- docker run --name hei gengjiawen/android-jsc:feature_abi_support /bin/sh -c "./fetch_sources.sh && buck build :android-jsc"
+- docker run --name hei $PWD:/pwd gengjiawen/android-jsc:feature_abi_support /bin/sh -c "./fetch_sources.sh && buck build :android-jsc"
 
